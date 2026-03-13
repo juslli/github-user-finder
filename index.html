@@ -1,33 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>GitHub Finder</title>
-
-<link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub User Finder</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <main class="container">
+    <div class="card">
+      <h1>Buscar Usuário do GitHub</h1>
+      <p class="subtitle">Encontre informações públicas de qualquer perfil</p>
 
-<div class="container">
+      <div class="search-box">
+        <input
+          type="text"
+          id="username"
+          placeholder="Digite o nome de usuário"
+          autocomplete="off"
+        />
+        <button id="searchBtn">Buscar</button>
+      </div>
 
-<h1>Buscar Usuário do GitHub</h1>
+      <p id="status" class="status"></p>
 
-<input type="text" id="username" placeholder="Digite o usuário">
+      <section id="result" class="result hidden">
+        <img id="avatar" src="" alt="Avatar do usuário" class="avatar" />
 
-<button onclick="buscar()">Buscar</button>
+        <h2 id="name">Nome do usuário</h2>
+        <p id="login" class="login">@usuario</p>
+        <p id="bio" class="bio">Bio do usuário</p>
 
-<div id="resultado"></div>
+        <div class="stats">
+          <div class="stat">
+            <span id="repos">0</span>
+            <small>Repos</small>
+          </div>
 
-</div>
+          <div class="stat">
+            <span id="followers">0</span>
+            <small>Seguidores</small>
+          </div>
 
-<script src="script.js"></script>
+          <div class="stat">
+            <span id="following">0</span>
+            <small>Seguindo</small>
+          </div>
+        </div>
 
+        <a id="profileLink" href="#" target="_blank" rel="noopener noreferrer">
+          Ver perfil no GitHub
+        </a>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
